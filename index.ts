@@ -20,7 +20,7 @@ const singleTweet = async () => {
       let {data} = await axios(`https://api.hadith.sutanlab.id/books/bukhari?range=${hadithNumber}-${hadithNumber}`)
       const {hadiths} = data.data
       await client.v1.tweet(hadiths[0].arab + '\n' + "رواه البخاري"+'\n' + '#حديث' )
-      console.log("tweet successfully created")
+     
       hadithOrAyah++
       return
     }
@@ -30,6 +30,7 @@ const singleTweet = async () => {
     let surah = await JSON.stringify([data.data.surah.name]);
     let ayah = await JSON.stringify(data.data.text);
     await client.v1.tweet(ayah + '\n' + surah + ' - ' + ' رقم الآيــة: '+ numberOfAyahs +'\n' +'#قرآن' )
+    hadithOrAyah++ 
     console.log("tweet successfully created")
     return
   } catch (e) {
