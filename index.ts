@@ -21,7 +21,7 @@ const singleTweet = async () => {
       const {hadiths} = data.data
       
       console.log(data.data.hadiths[0].arab+ '\n' + "رواه البخاري"+'/n' +'#حديث' );
-      await client.v1.tweet(hadiths[0].arab + '\n' + "رواه البخاري"+'/n' + '#قرآن' )
+      await client.v1.tweet(hadiths[0].arab + '\n' + "رواه البخاري"+'/n' + '#حديث' )
       console.log("tweet successfully created")
       hadithOrAyah++
       return
@@ -31,7 +31,7 @@ const singleTweet = async () => {
     let numberOfAyahs = data.data.surah.numberOfAyahs;
     let surah = await JSON.stringify([data.data.surah.name]);
     let ayah = await JSON.stringify(data.data.text);
-    await client.v1.tweet(ayah + '\n \n' + surah + ' - ' + ' رقم الآيــة: '+ numberOfAyahs)
+    await client.v1.tweet(ayah + '\n' + surah + ' - ' + ' رقم الآيــة: '+ numberOfAyahs +'/n' +'#قرآن' )
     console.log("tweet successfully created")
     return
   } catch (e) {
