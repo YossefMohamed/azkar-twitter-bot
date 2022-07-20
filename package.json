@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "nodemon index.ts",
     "build": "tsc build",
-    "start": "tsc && node dist/index.js"
+    "start": "node dist/index.js"
   },
   "author": "Yossef Mohamed",
   "license": "ISC",
