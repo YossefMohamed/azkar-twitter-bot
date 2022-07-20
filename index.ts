@@ -3,7 +3,7 @@ const app = express();
 const {client} = require("./handler/clientHandler");
 const axios = require('axios');
 const path = require('path');
-const tenMinutesDelay = 60000 * 10 ;
+const delayTime = 60000 * 30 ;
 
 app.get("/", (_:any, res:any) => {
   res.send("<h1>Server Is Running :)</h1>")
@@ -41,7 +41,7 @@ const singleTweet = async () => {
 
 setInterval(() => {
   singleTweet();
-}, tenMinutesDelay);
+}, delayTime;
 
 
 const port = process.env.PORT || 3000;
