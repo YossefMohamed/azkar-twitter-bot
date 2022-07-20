@@ -1,0 +1,29 @@
+{
+  "name": "azkar-twitter-bot",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.6.0"
+  },
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon index.ts",
+    "build": "tsc build",
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "Yossef Mohamed",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.16",
+    "ts": "^0.2.2",
+    "twitter-api-v2": "^1.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6"
+  }
+}
