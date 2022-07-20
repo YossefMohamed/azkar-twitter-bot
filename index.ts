@@ -20,8 +20,8 @@ const singleTweet = async () => {
       let {data} = await axios(`https://api.hadith.sutanlab.id/books/bukhari?range=${hadithNumber}-${hadithNumber}`)
       const {hadiths} = data.data
       
-      console.log(data.data.hadiths[0].arab+ '\n \n' + "رواه البخاري");
-      await client.v1.tweet(hadiths[0].arab + '\n \n' + "رواه البخاري")
+      console.log(data.data.hadiths[0].arab+ '\n' + "رواه البخاري"+'/n' +'#حديث' );
+      await client.v1.tweet(hadiths[0].arab + '\n' + "رواه البخاري"+'/n' + '#قرآن' )
       console.log("tweet successfully created")
       hadithOrAyah++
       return
@@ -39,6 +39,7 @@ const singleTweet = async () => {
   }
 }
 
+singleTweet()
 setInterval(() => {
   singleTweet();
 }, delayTime);
